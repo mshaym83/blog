@@ -8,3 +8,4 @@ var Employ = {
  };
  
  Employ.display();
+ //output : undefined
