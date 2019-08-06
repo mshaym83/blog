@@ -1,0 +1,30 @@
+
+
+function Button(props) {
+  return <button onClick= { () => props.onClickEvent(props.counterValue)}>+{props.counterValue}</button>
+}
+
+function Display(props) {
+  return (<div>{props.message}</div>);
+}
+
+function App() {
+  const [counter,setCounter] = useState(0);// React hook
+  const clickHandeler = (incrementVlaue) => setCounter(counter + incrementVlaue);
+  return (
+    <div>
+    <Button onClickEvent={clickHandeler} counterValue={1}/>
+      <Button onClickEvent={clickHandeler} counterValue={2}/>
+      <Button onClickEvent={clickHandeler} counterValue={3}/>
+      <Button onClickEvent={clickHandeler} counterValue={4}/>
+      <Button onClickEvent={clickHandeler} counterValue={5}/>
+      <Display message={counter}/>
+      </div>
+    
+  );
+}
+
+ReactDOM.render(
+<App/>,
+  document.getElementById('mountNode')
+)
